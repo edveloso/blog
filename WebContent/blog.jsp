@@ -6,6 +6,8 @@
 <html>
 <head>
 
+
+
   <link rel="stylesheet" href="./estilo.css" type="text/css" > 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,6 +19,8 @@
 
 	<h1>My Blogger</h1>
 	<br />
+	<a href="admin.jsp">Novo Post</a>
+	<br/>
  
  	<%
         List posts = (List) session.getAttribute("posts");

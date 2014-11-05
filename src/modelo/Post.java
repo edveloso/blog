@@ -1,10 +1,22 @@
 package modelo;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
 
-public class Post {
 
+
+public class Post implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+
+	private Integer codigo;
+	
 	private String titulo;
 	
 	private String imagem;
@@ -39,6 +51,14 @@ public class Post {
 
 	public void setConteudo(String conteudo) {
 		this.conteudo = conteudo;
+	}
+
+	@Override
+	public String toString() {
+		return "Post [" + (codigo != null ? "codigo=" + codigo + ", " : "")
+				+ (titulo != null ? "titulo=" + titulo + ", " : "")
+				+ (imagem != null ? "imagem=" + imagem + ", " : "")
+				+ (conteudo != null ? "conteudo=" + conteudo : "") + "]";
 	}
 	
 }

@@ -19,5 +19,6 @@
 	posts.add(post);
 	session.setAttribute("posts", posts);
 	response.sendRedirect("blog.jsp"); 	
+	
 %>
 
