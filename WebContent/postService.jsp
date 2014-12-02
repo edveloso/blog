@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
-	import="modelo.Post, java.util.List, java.util.ArrayList"
+	import="modelo.Post, java.util.List, java.util.ArrayList, modelo.PostDAO"
 	%>
+
+
 
 <%
  	String titulo = request.getParameter("titulo");
@@ -12,12 +14,9 @@
 	post.setImagem(foto);
 	post.setTitulo(titulo);
 	
-	List posts = (List) session.getAttribute("posts"); 
-	if(posts == null){
-		posts = new ArrayList();
-	}
-	posts.add(post);
-	session.setAttribute("posts", posts);
+	PostDAO dao = new PostDAO();
+	dao.salvar(post); 
+	
 	response.sendRedirect("blog.jsp"); 	
 	
 %>

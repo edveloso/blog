@@ -15,6 +15,7 @@ public class HibernateUtil {
 		//pega as configurções aqui
 		factory = cfg.buildSessionFactory();
 	}
+	
 	public static Session getSession(){
 		if(factory == null){
 			HibernateUtil util = new HibernateUtil();

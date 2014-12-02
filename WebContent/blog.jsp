@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
-	import="java.util.List, modelo.Post"
+	import="java.util.List, modelo.Post,modelo.PostDAO"
 	%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -23,7 +23,8 @@
 	<br/>
  
  	<%
-        List posts = (List) session.getAttribute("posts");
+ 	    PostDAO dao = new PostDAO();
+        List posts = dao.listar();
     		if(posts != null)
     		for(Object obj  : posts){
     		    	Post post = (Post) obj;
